@@ -1,20 +1,30 @@
+/*
+ * handle bars test.
+ * 
+ * a simple handle bars template engine.
+ * a good thing with handle bars is that there is no Javascript logic that needs
+ * to be introduced into the page.
+ * */
+
+// jquery dom ready function.
 $(function(){
 
 	// handle bars test.
 	// ===========================================================================
 	
-	// Whatever you want to do after the wait
+	// json data.
 	var data = { "name": "Alan", "hometown": "Somewhere, TX",
 	         "kids": [{"name": "Jimmy", "age": "12"}, {"name": "Sally", "age": "4"}]};
+	// fetch the handle bars template.
 	var src = $('#header1').html();
-	//var src = "<p>Hello, my name is {{name}}. I am from {{hometown}}. I have " +
-	//            	"{{kids.length}} kids:</p>" +
-	//            	"<ul>{{#kids}}<li>{{name}} is {{age}}</li>{{/kids}}</ul>";
-	console.log(src);
+	
+	// compile the template.
+	// basically converts the handle bar directives and json into html.
 	var template = Handlebars.compile(src);
 	var result = template(data);
-	console.log(result);
-
+	
+	// paste data back into the html page. using jquery.
+	$('body').append(result);	
 });
 //
 // ========
