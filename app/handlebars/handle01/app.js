@@ -9,13 +9,12 @@
 // jquery dom ready function.
 $(function(){
 
-	// handle bars test.
-	// ===========================================================================
-	
-	// json data.
+	// json data. handle bars using json data.
 	var data = { "name": "Alan", "hometown": "Somewhere, TX",
 	         "kids": [{"name": "Jimmy", "age": "12"}, {"name": "Sally", "age": "4"}]};
-	// fetch the handle bars template.
+	
+	// fetch the handle bars template from the html page.
+	// its the thing wrapped in script tags.
 	var src = $('#header1').html();
 	
 	// compile the template.
@@ -26,5 +25,3 @@ $(function(){
 	// paste data back into the html page. using jquery.
 	$('body').append(result);	
 });
-//
-// ========
