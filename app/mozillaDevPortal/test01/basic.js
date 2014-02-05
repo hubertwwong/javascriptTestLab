@@ -57,3 +57,46 @@ var array_2 = new Array();
 array_1.push("111");
 console.log(array_1[0] + " | length " + array_1.length);
 
+
+
+// functions...
+//////////////////////////////////////////////////////////////////////////////
+
+// remember that functions are objects...
+var add2 = function(a) {
+	return a+2;
+};
+// remember that this is annon. and you are getting scoping...
+
+console.log(add2(4));
+console.log(add2(5));
+
+// curious on global..
+function sub2(a) {
+	var private_in_func = "private_in_func";
+	global_in_func = "global_in_func_str";
+	return a-2;
+};
+
+// seeing if the function is global.
+// yup..
+console.log(sub2(100));
+console.log(global_in_func);
+//console.log(private_in_func);
+
+// using the apply function...
+add2_apply = add2.apply(null, [2,3,4]);
+console.log(add2_apply.toString());
+// seems to only use the last var..
+
+// note if you donn't define a param list, js has its on for functions
+var my_avg = function () {
+	var sum = 0;
+    for (var i = 0, j = arguments.length; i < j; i++) {
+        sum += arguments[i];
+    }
+    return sum / arguments.length;
+};
+
+console.log(my_avg(1,2,3,4));
+console.log(my_avg.apply(null, [1,2,5,6]));

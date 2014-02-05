@@ -1,0 +1,13 @@
+/* c style comments */
+div.black_outline {
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.red {
+	color: red;	
+}
+
+.blue {
+	color: blue;
+}
